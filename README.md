@@ -4,6 +4,20 @@
 
 How did The Times come to that conclusion? Using the [Jupyter Notebook](https://github.com/datadesk/california-ccscore-analysis/blob/master/analysis.ipynb) in this repository.
 
+### Steve's Notes
+
+In cell execution 30 and 41, these lines specify an inner join. However, sense all tables have the same set of `supplier_name` values, this operation is essentially an outer join.
+```
+summer_table = summer_16_totals.merge(summer_15_totals, on="supplier_name")
+summer_table = summer_table.merge(summer_13_totals, on="supplier_name")
+```
+
+```
+summer_table = summer_table.merge(summer_16_means, on="supplier_name")
+```
+
+![workflow](workflow.jpg)
+
 ### Running the analysis
 
 Create a virtual environment.
